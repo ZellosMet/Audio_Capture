@@ -29,8 +29,8 @@
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
-			System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-			System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+			System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+			System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
 			this.cb_devices = new System.Windows.Forms.ComboBox();
 			this.b_Start = new System.Windows.Forms.Button();
 			this.b_Stop = new System.Windows.Forms.Button();
@@ -46,6 +46,7 @@
 			this.cb_devices.Name = "cb_devices";
 			this.cb_devices.Size = new System.Drawing.Size(775, 24);
 			this.cb_devices.TabIndex = 0;
+			this.cb_devices.SelectedIndexChanged += new System.EventHandler(this.cb_devices_SelectedIndexChanged);
 			// 
 			// b_Start
 			// 
@@ -72,14 +73,16 @@
 			this.cht_Wave.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			chartArea2.Name = "ChartArea1";
-			this.cht_Wave.ChartAreas.Add(chartArea2);
+			chartArea1.AxisY.Maximum = 2000D;
+			chartArea1.AxisY.Minimum = -2000D;
+			chartArea1.Name = "ChartArea1";
+			this.cht_Wave.ChartAreas.Add(chartArea1);
 			this.cht_Wave.Location = new System.Drawing.Point(13, 138);
 			this.cht_Wave.Name = "cht_Wave";
-			series2.ChartArea = "ChartArea1";
-			series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-			series2.Name = "Series1";
-			this.cht_Wave.Series.Add(series2);
+			series1.ChartArea = "ChartArea1";
+			series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+			series1.Name = "Series1";
+			this.cht_Wave.Series.Add(series1);
 			this.cht_Wave.Size = new System.Drawing.Size(775, 300);
 			this.cht_Wave.TabIndex = 3;
 			this.cht_Wave.Text = "chart1";
